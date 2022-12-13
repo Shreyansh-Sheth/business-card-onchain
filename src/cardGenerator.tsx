@@ -153,7 +153,7 @@ const CARD = ({
   contactInfo: ContactInfo[];
 }) => {
   const contract = useContract(
-    "0x0816b6602cCEae3ffECe777247C8e598731512eb",
+    "0x1dfcAb670E0E2aAf10Eef49201474Fee7DDAdDA1",
     "nft-collection"
   );
   const [mintStarted, setMintStarted] = useState(false);
