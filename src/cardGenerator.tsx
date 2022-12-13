@@ -11,6 +11,7 @@ type ContactInfo = {
   info: string;
 };
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
+import { ContractData } from "./contract";
 export default function CardGenerator() {
   const [showAddress, setShowAddress] = useState(false);
   const [name, setName] = useState("Shreyansh Sheth");
@@ -152,10 +153,7 @@ const CARD = ({
   showGradient: boolean;
   contactInfo: ContactInfo[];
 }) => {
-  const contract = useContract(
-    "0x1dfcAb670E0E2aAf10Eef49201474Fee7DDAdDA1",
-    "nft-collection"
-  );
+  const contract = useContract(ContractData.address, "nft-collection");
   const [mintStarted, setMintStarted] = useState(false);
 
   const address = useAddress();
@@ -221,7 +219,6 @@ const CARD = ({
                 metadata
               );
               alert("NFT Minted");
-              alert("Receipt" + tokenData.receipt);
 
               //open minted nft in new tab
               window.open(
